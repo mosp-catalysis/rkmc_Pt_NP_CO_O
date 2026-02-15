@@ -1,0 +1,7 @@
+100000000                    ! steps
+3.9239  3.9239  3.9239       ! lattice parameter of fcc Pt/angstrom
+112.0   112.0   112.0        ! box size/angstrom
+Pt                           ! element
+423                          ! temperature/K
+4591                         ! CO pressure/Pa
+9182                         ! O2 pressure/Pa
