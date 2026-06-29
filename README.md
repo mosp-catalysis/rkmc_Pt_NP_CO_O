@@ -1,21 +1,34 @@
-> **Note**  
-> This is a demo. The formal version will be released in the future.  
 
-### Kinetic Monte Carlo (kMC) Simulations for Pt Nanoparticle (NP) Systems under CO Oxidation Conditions  
+### Kinetic Monte Carlo (KMC) Simulations for Pt Nanoparticle (NP) Systems under CO Oxidation Conditions  
 
-A demo executable for Linux environments is provided. The executable `rkmc_Pt_CO_O.exe` was compiled in the following environment: **GNU Fortran (GCC) 8.5.0 20210514 (Red Hat 8.5.0-18)**.  
+This package provides the Fortran source code and input files required to perform KMC simulations of Pt nanoparticle systems under CO oxidation conditions. Two Pt NP models are included: Pt(110)-(1×1) and Pt(110)-(1×2).  
 
 The `input` file defines the parameters required for the simulation, including:  
-* Number of kMC steps  
+* Number of KMC steps  
 * Lattice space size and spacing  
 * System temperature  
 * Partial pressures of CO and O<sub>2</sub> gas  
 
-Two NP structures, Pt(110)-(1×1) and Pt(110)-(1×2), are provided in the folders `110-1x1-NP-model-files` and `110-1x2-NP-model-files`, respectively. These folders contain the following structural files in .xyz format:  
-- `ini.xyz`: A customizable input structure file (here representing either the Pt(110)-(1×1) or (1×2) NP structures).  
-- `100.xyz`, `110.xyz`, `111.xyz`, and `edge.xyz`: These files define the positions and quantities of the (100), (110), (111), and edge sites on the corresponding NP.
+The structural files for the two NP models are provided in the following folders:
+- `110-1x1-NP-model-files`: Pt(110)-(1×1) NP model
+- `110-1x2-NP-model-files`: Pt(110)-(1×2) NP model
 
-To run `rkmc_Pt_CO_O.exe`, please place the executable, `input` file and all .xyz files from one of the model folders into the same directory.
+Each folder contains the following `.xyz` files:  
+
+- `ini.xyz`: Initial NP structure file, which can be customized by the user. In this package, it corresponds to either the Pt(110)-(1×1) or Pt(110)-(1×2) NP structure.  
+- `100.xyz`, `110.xyz`, `111.xyz`, and `edge.xyz`: Files defining the positions and numbers of the (100), (110), (111), and edge sites on the corresponding NP.  
+
+To compile the KMC code, run:
+
+```bash
+gfortran rkmc_Pt_CO_O.f95 -o rkmc.exe
+```
+
+To run a KMC simulation, place the compiled executable `rkmc.exe`, the `input` file, and all `.xyz` files from one of the model folders into the same working directory. Then execute:
+
+```bash
+./rkmc.exe
+```
 
 ---
 
